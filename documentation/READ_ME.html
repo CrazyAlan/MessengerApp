@@ -1,0 +1,258 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Messenger App Template for iOS</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="Eric Schanet">
+	<meta name="copyright" content="Eric Schanet">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2015-05-07T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#EEEEEE;color:#383838;}
+		::-moz-selection{background:#333636;color:#00DFFC;}
+		::selection{background:#333636;color:#00DFFC;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#008C9E;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #008C9E, #006673);
+			  background-image: -ms-linear-gradient(top, #008C9E, #006673);
+			  background-image: -webkit-gradient(linear, 0 0, 0 008C9E%, from(#343838), to(#006673));
+			  background-image: -webkit-linear-gradient(top, #008C9E, #006673);
+			  background-image: -o-linear-gradient(top, #008C9E, #006673);
+			  background-image: linear-gradient(top, #008C9E, #006673);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008C9E', endColorstr='#006673', GradientType=0);
+			  border-color: #006673 #006673 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #008C9E #008C9E #bfbfbf;
+		  background-color: #006673;
+		}
+		hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#343838;color:#FFFFFF;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #494F4F;-moz-text-shadow:1px 1px 0px #494F4F;text-shadow:1px 1px 0px #494F4F;}
+		#documenter_sidebar ul{border-top:1px solid #212424;}
+		#documenter_sidebar ul a{border-top:1px solid #494F4F;border-bottom:1px solid #212424;color:#FFFFFF;}
+		#documenter_sidebar ul a:hover{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+		#documenter_sidebar ul a.current{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-messenger-app-template-for-ios">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#setting_up" title="Setting up">Setting up</a></li>
+			<li><a href="#reskinning_and_customising" title="Reskinning and customising">Reskinning and customising</a></li>
+			<li><a href="#integrating_the_template_in_your_existing_project" title="Integrating the template in your existing project">Integrating the template in your existing project</a></li>
+			<li><a href="#copyright" title="COPYRIGHT">COPYRIGHT</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright Eric Schanet 2015<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Messenger App Template for iOS</h1>
+	
+	<div id="documenter_buttons">
+		
+	</div>
+	<hr>
+	<ul>
+	<li>created: 05/01/2015</li>
+	<li>latest update: 05/07/2015</li>
+	<li>by: Eric Schanet</li>
+	<li><a href=""></a></li>
+	<li>email: <a href="mailto:&#101;&#115;&#99;&#104;&#97;&#110;&#101;&#116;&#64;&#121;&#97;&#104;&#111;&#111;&#46;&#100;&#101;">&#101;&#115;&#99;&#104;&#97;&#110;&#101;&#116;&#64;&#121;&#97;&#104;&#111;&#111;&#46;&#100;&#101;</a></li>
+	</ul>
+	<p>This documentation will show you in detail how to setup the Messenger template, and how to integrate it in to your existing project.</p>
+	</section>
+	
+	<section id="setting_up">
+	<div class="page-header"><h3>Setting up</h3><hr class="notop"></div>
+<p>
+	First of all, you have to open the project itself. Navigate to the &lt;Messenger.xcodeproj&gt; file in your downloaded folder, and open it. You will see, as always, the well-known window of XCode, presenting you the Project Navigator and a whole bunch of other items and options.&nbsp;</p>
+<p>
+	You can try to run the project on your device or simulator, it should work without any problems, even the push notifications should work (I set them up, that&#39;s why ...). If this is the case you could theoretically jump to the next section, <strong>but</strong> you need to change some keys of the App. In fact, the project uses <a href="https://www.parse.com">Parse.com</a>&nbsp;as backend service (saving all the users, chatrooms and messages), and Facebook as Login Service. This means, you need to <strong>change the corresponding keys to match the keys of the apps you will have created on these services</strong>.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>We will start with the Facebook Login.&nbsp;</strong>(If you know how to do this and how to replace the key in the .plist, skip it).</p>
+<p>
+	Navigate to the &lt;MessengerApp&gt; folder, which is in the blue &lt;Messenger.xcodeproj&gt; folder. This will show you some files, including the &lt;AppDelegate.m&gt; and the &lt;Info.plist&gt; (in the Supporting Files folder). Ignore the &lt;AppDelegate.m&gt; file for a while and jump directly to the &lt;Info.plist&gt; file. It will show you a table of values, in which you find a &#39;FacebookAppID&#39; row. This is the key of the Facebook I created myself for the Facebook Login. You will need to create your own App on Facebook:</p>
+<p style="margin-left: 40px;">
+	&bull; Go to <a href="https://developers.facebook.com">developers.facebook.com</a>&nbsp;and create a new app. Choose iOS as platform, and enter a name for your app. You will be asked, if this is a test app (you decide) and in which category your app belongs (again, you decide). You can now follow the quick start of facebook, or simply skip it (it doesn&#39;t tell you anything new ... phew).&nbsp;</p>
+<p style="margin-left: 40px;">
+	<img alt="" src="assets/images/image_9.png" style="width: 700px; height: 342px;"></p>
+<p style="margin-left: 40px;">
+	&nbsp;</p>
+<p style="margin-left: 40px;">
+	&bull; Eventually you will find yourself in the Dashboard of your App. There you will have to <strong>copy the App ID</strong> ...</p>
+<p style="margin-left: 40px;">
+	<img alt="" src="assets/images/image_7.png" style="width: 700px; height: 320px;"></p>
+<p style="margin-left: 40px;">
+	and <strong>replace the key in the .plist file</strong> with your own key</p>
+<p style="margin-left: 40px;">
+	<img alt="" src="assets/images/image_11.png" style="width: 800px; height: 311px;"></p>
+<p style="margin-left: 40px;">
+	<br>
+	&bull; The last thing we need to do on Facebook is telling Facebook the Bundle ID of your app. The default Bundle ID is &quot;eric.Messenger&quot;, but if you changed it with your own ID you created on Apple iOS Developers (you should know how to do this if you want the develop apps), you will have to enter your own Bundle ID for iOS.</p>
+<p style="margin-left: 40px;">
+	<img alt="" src="assets/images/image_2.png" style="width: 600px; height: 431px;"></p>
+<p>
+	Thats it for Facebook, you can leave Facebook and return to XCode. <strong>Try and run the App again, the Facebook login should still work</strong>, but this time it is your propper app that you&#39;re logging in. Congrats!</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Now we move to the Parse.com part.&nbsp;</strong>(Again, if you&#39;re not new to Parse, skip this part, you should know everything)</p>
+<p>
+	First of all, navigate to the &lt;AppDelegate.m&gt; file. In the application:didFinishLaunchingWithOptions: method, you will find a Parse <strong>ApplicationID and Client Key</strong>. These keys are my own keys, they currently allow you to run the app, but they&#39;re not sufficient enough to go in production with the app (because they&#39;re mine...). What you will need to do, is register at&nbsp;<a href="https://parse.com">Parse.com</a>&nbsp;and create a new app. Parse has a great free plan, reserving you tons of space for free, and sparing you of the whole server-end programmation (Parse will do everything for you, literally, everything, you just send your data to Parse and their servers deal with it).</p>
+<p>
+	Now click on the app you just made and enter the date browser of it. You will be presented with the following screen, where you will have to go to settings and <strong>copy the &quot;ApplicationID&quot; and &quot;ClientKey&quot;&nbsp;</strong></p>
+<p>
+	<img alt="" src="assets/images/image_6.png" style="width: 800px; height: 467px;"></p>
+<p>
+	and<strong> replace the values in the AppDelegate.m</strong> file.</p>
+<p>
+	<img alt="" src="assets/images/image_12.png" style="width: 800px; height: 307px;"></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Launch the app once again.</strong> It should work without any problems. Congratulations, you&#39;re done with setting the app up. Note that you do not need to create any classes in the Parse Data Browser, the app does this for you - it creates the classes the moment it needs them the first time, but only if you <strong>allow Client Class Creation</strong>.&nbsp;</p>
+<p>
+	<img alt="" src="assets/images/image_5.png" style="width: 800px; height: 389px;"></p>
+<p>
+	&nbsp;</p>
+<p>
+	For general questions about Parse.com and Facebook, please read their documentations, esp. the documentation and Quickstart of Parse is excellent (and Google reveals tons of questions on the Parse forums, as always).&nbsp;</p>
+<p>
+	But unfortunately you&#39;re not done yet...</p>
+<p>
+	<strong>The last part - setting up push notifications</strong></p>
+<p>
+	As I already mentioned, Parse has an excellent documentation and quickstart guide. This is esp. true for the push notifications, I couldn&#39;t have done it better. The template supports push notifications (of course, it is a chat app), and these are delivered by the Push Services of Parse (praise them!), all you have to do is set them up in your App Settings on Parse.<br>
+	<a href="https://parse.com/tutorials/ios-push-notifications">Here</a> is the link to the QuickStart guide, please follow these instructions, and they&#39;ll get you to working pushes in no time. (<a href="https://parse.com/tutorials/ios-push-notifications">https://parse.com/tutorials/ios-push-notifications</a>)</p>
+<p>
+	If you&#39;re in a hurry, you can also skip the push part, and go through the rest of the documentation, your choice.&nbsp;</p>
+</section>
+<section id="reskinning_and_customising">
+	<div class="page-header"><h3>Reskinning and customising</h3><hr class="notop"></div>
+<p>
+	In this section, I will guide you through the <strong>basics of customising and reskinning</strong> your app.&nbsp;</p>
+<p>
+	<strong>We&#39;ll start with the icons</strong>. Simply create your own icon and replace all the icons in the &lt;Images.xcassets&gt; folder with your own icon (you absolutely need to respect the icon sizes!). In the folder you downloaded on CodeCanyon is even a .psd file of my icon, and once you have done your icon in an acceptable resolution, there are tons of services producing you every single icon resolution you need (<a href="http://makeappicon.com">here</a> is one, if you&#39;re too lazy to search them on your own).</p>
+<p>
+	<img alt="" src="assets/images/image_1.png" style="width: 900px; height: 455px;"></p>
+<p>
+	&nbsp;</p>
+<p>
+	If you have created your new icon, you can also replace the icon in the welcome view (the view that is shown to you, when the app has launched):</p>
+<p style="margin-left: 40px;">
+	&bull; In the &quot;All classes&quot; folder go to the &lt;User&gt; folder and open the &lt;WelcomeView.m&gt; file, where you see the code responsible for the icon in the viewDidLoad: method. The respective image is in the same folder, named iTunesA&#114;&#116;&#119;&#111;&#114;&#107;&#64;&#50;&#120;&#46;&#112;&#110;&#103;, replace this one with your own icon, respecting the 1024x1024 pixels resolution and the &quot;@2x&quot; in the name. If you change the name of the image, you will also need to change the name in the code.&nbsp;</p>
+<p style="margin-left: 40px;">
+	<img alt="" src="assets/images/image_8.png" style="width: 900px; height: 355px;"></p>
+<p style="margin-left: 40px;">
+	<br>
+	&bull; In the same folder, are the &lt;LoginView.xib&gt;, &lt;RegisterView.xib&gt; and &lt;WelcomeView.xib&gt; files, which are responsible for the respective views. In these .xib files, you can change the design very easily to fit your personal needs.</p>
+<p>
+	Next you need to <strong>customise the LaunchScreen</strong>. Navigate to the &lt;LaunchScreen.xib&gt; file and edit the labels in the .xib to fit your needs. You can also create a one-color LaunchScreen, do whatever you want, you&#39;re free, as always.</p>
+<p>
+	<img alt="" src="assets/images/image_3.png" style="width: 800px; height: 405px;"></p>
+<p>
+	&nbsp;</p>
+<p>
+	Now we leave the login/register views and enter the app with a logged-in user. The first thing you see is that the NavigationBar is black - this can be changed in the &lt;NavigationController.m&gt;.</p>
+<p>
+	<img alt="" src="assets/images/image_10.png" style="width: 800px; height: 307px;"></p>
+<p>
+	&nbsp;</p>
+<p>
+	The last main thing you have to do, is go to the &lt;Resources&gt; folder, and reskin the images there. No need to explain anything more here, I think this should be straightforward. (For educational purposes, no red rectangles, nor circles here, exerce yourself and try to find them on your own, I promise it&#39;s not that difficult ... hue hue)</p>
+<p>
+	<img alt="" src="assets/images/image_4.png"  ></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>For reskin and customising actions in the proper chat views</strong> (where you see the messages), please go to the <a href="https://github.com/jessesquires/JSQMessagesViewController">JSQMessages</a>&nbsp;documentation on github (a big thanks to Jesse Squires).<br>
+	If you have any questions, don&#39;t hesitate to contact me! I will be happy to help you (I am a physics student and have A LOT of freetime, really, A LOT!).</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="integrating_the_template_in_your_existing_project">
+	<div class="page-header"><h3>Integrating the template in your existing project</h3><hr class="notop"></div>
+<p>
+	Integrating the template in your existing project is not trivial and strongly depends on how the architecture of your project looks. In general, if you have a tab-based application, you will need to copy all of the following files into your project.&nbsp;</p>
+<p>
+	Once you&#39;ve done that, you can simply<strong> initiate the MessagesView Controller as normal ViewController</strong>:</p>
+<pre class="plain" style="margin: 0px; font-size: 11px; font-family: Menlo; -webkit-text-stroke-color: rgb(0, 0, 0); -webkit-text-stroke-width: initial;">
+<span style="color: rgb(194, 52, 155); -webkit-text-stroke-color: rgb(194, 52, 155);">@property</span><span style="color: rgb(255, 255, 255); -webkit-text-stroke-color: rgb(255, 255, 255);"> </span>(<span style="color: rgb(194, 52, 155); -webkit-text-stroke-color: rgb(194, 52, 155);">nonatomic</span>, <span style="color: rgb(194, 52, 155); -webkit-text-stroke-color: rgb(194, 52, 155);">strong</span>) <span style="color: rgb(147, 200, 106); -webkit-text-stroke-color: rgb(147, 200, 106);">MessagesView </span>*chatViewController;</pre>
+<p>
+	and <strong>add it to your UITabbarController</strong>:</p>
+<pre class="plain" style="margin: 0px; font-size: 11px; font-family: Menlo; -webkit-text-stroke-color: rgb(0, 0, 0); -webkit-text-stroke-width: initial;">
+<span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #c2349b">self</span><span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #000000">.</span>chatViewController<span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #000000"> = [[</span>MessagesView<span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #ffffff"> </span><span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #00afca">alloc</span><span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #000000">] </span><span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #00afca">init</span><span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #000000">];</span>
+
+UINavigationController<span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #000000"> *chatNavigationController = [[</span>UINavigationController<span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #ffffff"> </span>alloc<span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #000000">] </span>initWithRootViewController<span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #000000">:</span><span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #c2349b">self</span><span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #000000">.</span><span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #93c86a">chatViewController</span><span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #000000">];</span>
+
+<span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #c2349b">self</span>.<span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #93c86a">tabBarController</span>.<span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #00afca">viewControllers</span> = <span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #8b84cf">@[</span> homeNavigationController, accountNavigationController, emptyNavigationController, chatNavigationController, activityFeedNavigationController<span style="font-kerning: none; font-variant-ligatures: no-common-ligatures; color: #8b84cf">]</span>;</pre>
+<p>
+	(Here the homeNavigationController, accountNavigationController, emptyNavigationController and activityNavigationController are sample NavigationControllers I used in an app.)</p>
+<p>
+	&nbsp;</p>
+<p>
+	That&#39;s it, with this you should be able to integrate the template in your existing project. Note that your Parse Database needs to fit the data models of the template (the easiest thing to do, is to allow dynamic class creation on parse, so that the app can create classes on its own which means that you don&#39;t need to create every single class, the app does it for you)</p>
+<p>
+	&nbsp;</p>
+<p>
+	Again: Questions? Contact me, I&#39;ll help you.</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="copyright">
+	<div class="page-header"><h3>COPYRIGHT</h3><hr class="notop"></div>
+<p>
+	This project is based on the open sourced project NotificationChat available here: <a href="https://github.com/relatedcode/NotificationChat">https://github.com/relatedcode/NotificationChat</a></p>
+<p>
+	using the JSQMessagesViewController:&nbsp;<a href="https://github.com/jessesquires/JSQMessagesViewController">https://github.com/jessesquires/JSQMessagesViewController</a></p>
+</section>
+
+	</div>
+</body>
+</html>
